@@ -2,7 +2,7 @@
 
 > 轻量级应用内调试面板 -- 在 Flutter App 中集成可拖拽悬浮球入口，提供日志查看、网络抓包、状态监控、性能指标与自定义调试动作五大功能模块。
 
-![截图](ScreenShot.png)
+![截图](https://raw.githubusercontent.com/boo-boom/flutter_console_panel/refs/heads/main/ScreenShot.png)
 
 
 ## 目录

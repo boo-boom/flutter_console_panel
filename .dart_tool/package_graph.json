@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "flutter_console_panel",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "dependencies": [
         "dio",
         "flutter",
