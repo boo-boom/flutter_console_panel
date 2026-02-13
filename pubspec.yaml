@@ -1,0 +1,23 @@
+name: flutter_console_panel
+description: "In-app debug panel for Flutter apps (logs, network, state, performance, actions)."
+version: 0.0.1
+homepage: https://github.com/boom-flutter/flutter_console_panel
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.9.0
+  http: ^1.2.2
+  shared_preferences: ^2.5.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
