@@ -23,8 +23,7 @@ class _SharedPrefsTabState extends State<SharedPrefsTab> {
         final entries = service.entries.where((e) {
           if (_search.isEmpty) return true;
           final q = _search.toLowerCase();
-          return e.key.toLowerCase().contains(q) ||
-              service.formatValue(e).toLowerCase().contains(q);
+          return e.key.toLowerCase().contains(q) || service.formatValue(e).toLowerCase().contains(q);
         }).toList();
 
         return Column(
@@ -264,7 +263,7 @@ class _SharedPrefsTabState extends State<SharedPrefsTab> {
                     ),
                     const SizedBox(height: 12),
                     DropdownButtonFormField<SharedPrefsValueType>(
-                      value: selectedType,
+                      initialValue: selectedType,
                       decoration: const InputDecoration(
                         labelText: '类型',
                         border: OutlineInputBorder(),
@@ -282,20 +281,16 @@ class _SharedPrefsTabState extends State<SharedPrefsTab> {
                     const SizedBox(height: 12),
                     TextField(
                       controller: valueController,
-                      maxLines:
-                          selectedType == SharedPrefsValueType.stringList
-                              ? 5
-                              : 1,
+                      maxLines: selectedType == SharedPrefsValueType.stringList ? 5 : 1,
                       decoration: InputDecoration(
                         labelText: '值 (Value)',
                         border: const OutlineInputBorder(),
                         isDense: true,
-                        hintText:
-                            selectedType == SharedPrefsValueType.stringList
-                                ? '每行一个元素'
-                                : selectedType == SharedPrefsValueType.bool
-                                ? 'true 或 false'
-                                : null,
+                        hintText: selectedType == SharedPrefsValueType.stringList
+                            ? '每行一个元素'
+                            : selectedType == SharedPrefsValueType.bool
+                            ? 'true 或 false'
+                            : null,
                       ),
                     ),
                   ],
@@ -353,7 +348,7 @@ class _SharedPrefsTabState extends State<SharedPrefsTab> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     DropdownButtonFormField<SharedPrefsValueType>(
-                      value: selectedType,
+                      initialValue: selectedType,
                       decoration: const InputDecoration(
                         labelText: '类型',
                         border: OutlineInputBorder(),
@@ -371,20 +366,16 @@ class _SharedPrefsTabState extends State<SharedPrefsTab> {
                     const SizedBox(height: 12),
                     TextField(
                       controller: valueController,
-                      maxLines:
-                          selectedType == SharedPrefsValueType.stringList
-                              ? 5
-                              : 1,
+                      maxLines: selectedType == SharedPrefsValueType.stringList ? 5 : 1,
                       decoration: InputDecoration(
                         labelText: '值 (Value)',
                         border: const OutlineInputBorder(),
                         isDense: true,
-                        hintText:
-                            selectedType == SharedPrefsValueType.stringList
-                                ? '每行一个元素'
-                                : selectedType == SharedPrefsValueType.bool
-                                ? 'true 或 false'
-                                : null,
+                        hintText: selectedType == SharedPrefsValueType.stringList
+                            ? '每行一个元素'
+                            : selectedType == SharedPrefsValueType.bool
+                            ? 'true 或 false'
+                            : null,
                       ),
                     ),
                   ],

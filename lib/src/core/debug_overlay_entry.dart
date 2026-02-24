@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../ui/debug_panel_shell.dart';
@@ -31,15 +33,17 @@ class _DebugOverlayRootState extends State<DebugOverlayRoot> {
         final padding = 12.0;
 
         // 将按钮位置限制在可视区域内。
+        // 注意：当约束尺寸很小（如布局初始化阶段）时，maxX/maxY 可能小于 minX/minY，
+        // 需要用 math.max 保护，否则 clamp 会因 min > max 抛出 ArgumentError。
         double clampX(double x) {
           final minX = padding;
-          final maxX = constraints.maxWidth - buttonSize - padding;
+          final maxX = math.max(minX, constraints.maxWidth - buttonSize - padding);
           return x.clamp(minX, maxX);
         }
 
         double clampY(double y) {
           final minY = padding + media.padding.top;
-          final maxY = constraints.maxHeight - buttonSize - padding - media.padding.bottom;
+          final maxY = math.max(minY, constraints.maxHeight - buttonSize - padding - media.padding.bottom);
           return y.clamp(minY, maxY);
         }
 
